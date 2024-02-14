@@ -15,11 +15,18 @@ class MainWindow(tk):
     def __init__(self):
         super().__init__()
         self.geometry("140x80")
-        self.createFrameButtons().pack()
+        self.config(bg="black")
+        self.createFrameButtons().pack(expand=True)
+
     def createFrameButtons(self) -> frame:
         self.frameMain = frame(self)
         self.btnStartTimer = button(self.frameMain, text="Start Timer")
+        self.btnText = button(self.frameMain, text="Start Text")
+        self.lblStatus = label(self.frameMain)
+
         self.btnStartTimer.pack()
+        self.btnText.pack()
+        self.lblStatus.pack()
 
         return self.frameMain
 
