@@ -23,12 +23,13 @@ class MainWindow(tk):
         self.btnStartTimer = button(self.frameMain, text="Start Timer")
         self.btnText = button(self.frameMain, text="Start Text")
         self.lblStatus = label(self.frameMain)
-
+        #lol
         self.btnStartTimer.pack()
         self.btnText.pack()
         self.lblStatus.pack()
 
         return self.frameMain
+
 
 if __name__ == "__main__":
     mainWindow = MainWindow()
