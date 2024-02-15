@@ -20,7 +20,7 @@ class MainWindow(tk):
 
     def createFrameButtons(self) -> frame:
         self.frameMain = frame(self)
-        self.btnStartTimer = button(self.frameMain, text="Start Timer")
+        self.btnStartTimer = button(self.frameMain, text="Start Timer", command=self.onDownLoadButtonClicked())
         self.btnText = button(self.frameMain, text="Start Text")
         self.lblStatus = label(self.frameMain)
         #lol
@@ -30,6 +30,12 @@ class MainWindow(tk):
 
         return self.frameMain
 
+    def onDownLoadButtonClicked(self):
+        thrd1 = threading.Thread(target=self.download, args=("elpepe.jpg", ) ,daemon=True)
+        thrd1.start()
+    def download(self, fileName: str):
+        for progress in range(1,10):
+            time.sleep(1)
 
 if __name__ == "__main__":
     mainWindow = MainWindow()
